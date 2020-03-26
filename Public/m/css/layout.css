@@ -170,7 +170,7 @@ html, body { overflow: hidden; -webkit-overflow-scrolling: touch; -moz-overflow-
 
 /* 专题专题 start */
 .special-list {}
-.special-list .list { height: 3.3rem; position: relative; margin-bottom: .26rem; margin: .3rem; border-radius: .08rem; overflow: hidden; }
+.special-list .list { position: relative; margin-bottom: .26rem; margin: .3rem; border-radius: .2rem; overflow: hidden; }
 .special-list .list img { width: 100%; }
 .special-more { margin: .3rem; height: .8rem; line-height: .8rem; text-align: center; background: #f4f4f4; }
 .special-more a { width: 100%; height: 100%; font-size: .28rem; }
@@ -203,8 +203,8 @@ html, body { overflow: hidden; -webkit-overflow-scrolling: touch; -moz-overflow-
 /* 专题推荐 end */
 
 /* 专题详情 start */
-.special-banner { height: 3.3rem; margin: 0; margin-bottom: 0; border-radius: 0; overflow: hidden; }
-.special-banner img { width: 100%; height: 100%; }
+.special-banner { margin: 0; margin-bottom: 0; border-radius: 0; overflow: hidden; }
+.special-banner img { width: 100%;}
 .special-content { padding: .3rem; }
 .special-content .tool { font-size: .22rem; color: #909090; height: .24rem; padding-bottom: .22rem; }
 .special-content .tool label { height: .24rem; line-height: .24rem; float: left; margin-right: .5rem; padding-left: .36rem; font-size: .22rem; }
