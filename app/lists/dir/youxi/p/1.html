@@ -28,7 +28,7 @@
 						<a href="/app/99.html" class="btn fr" title="跳一跳" data-clipboard-text="跳一跳">看看</a>
 						<a href="/app/99.html" title="跳一跳" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/Hd7a7c3e11b6042088a5630cba238375b8.jpg" alt="跳一跳">
+								<img data-original="https://ae01.alicdn.com/kf/Hd7a7c3e11b6042088a5630cba238375b8.jpg" alt="跳一跳">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -58,6 +58,14 @@
         </div>
     </div>	
 	</div>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script type="text/javascript">
+	$("img").lazyload({
+		placeholder : "https://ae01.alicdn.com/kf/U5f7403b223a844d9b610f135aba24fb7l.png",
+		threshold :2000,
+		effect:"fadeIn"
+	});
+	</script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/touchjs/0.2.14/touch.min.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 	<script type="text/javascript" src="/Public/m/js/common.min.js?1.0.24"></script>

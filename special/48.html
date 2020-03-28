@@ -20,7 +20,7 @@
 	<div class="page">
 		<div class="m-container bottom">
 			<div class="m-sub">
-				<div class="special-banner"><img src="https://ae01.alicdn.com/kf/Ud10c338b3e2c4a30ae210342897f7be0H.jpg"></div>
+				<div class="special-banner"><img data-original="https://ae01.alicdn.com/kf/Ud10c338b3e2c4a30ae210342897f7be0H.jpg"></div>
 				<div class="objects" style="margin-left: 0;">
 					<div class="list b-bottom-e5" style="padding: .4rem .3rem .4rem .3rem;">
 						<a href="/app/111.html" class="btn fr" data-clipboard-text="国家企业信用信息公示系统">看看</a>
@@ -133,6 +133,14 @@
 			</a>
         </div>
     </div>	
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script type="text/javascript">
+	$("img").lazyload({
+		placeholder : "https://ae01.alicdn.com/kf/U5f7403b223a844d9b610f135aba24fb7l.png",
+		threshold :2000,
+		effect:"fadeIn"
+	});
+	</script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/touchjs/0.2.14/touch.min.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 	<script type="text/javascript" src="/Public/m/js/common.min.js?1.0.24"></script>

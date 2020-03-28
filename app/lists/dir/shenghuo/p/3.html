@@ -28,7 +28,7 @@
 						<a href="/app/24.html" class="btn fr" title="街电" data-clipboard-text="街电">看看</a>
 						<a href="/app/24.html" title="街电" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/H0f6a94aef54347699f99701622b6d133l.png" alt="街电">
+								<img data-original="https://ae01.alicdn.com/kf/H0f6a94aef54347699f99701622b6d133l.png" alt="街电">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -41,7 +41,7 @@
 						<a href="/app/21.html" class="btn fr" title="腾讯校园码" data-clipboard-text="腾讯校园码">看看</a>
 						<a href="/app/21.html" title="腾讯校园码" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/H4f5fe3c0e28f4420ba2a8ae11f3748714.jpg" alt="腾讯校园码">
+								<img data-original="https://ae01.alicdn.com/kf/H4f5fe3c0e28f4420ba2a8ae11f3748714.jpg" alt="腾讯校园码">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -54,7 +54,7 @@
 						<a href="/app/20.html" class="btn fr" title="腾讯家庭守护" data-clipboard-text="腾讯家庭守护">看看</a>
 						<a href="/app/20.html" title="腾讯家庭守护" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/Hcc6e5ca11af44b7e8b97fddc0714c0ab0.jpg" alt="腾讯家庭守护">
+								<img data-original="https://ae01.alicdn.com/kf/Hcc6e5ca11af44b7e8b97fddc0714c0ab0.jpg" alt="腾讯家庭守护">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -84,6 +84,14 @@
         </div>
     </div>	
 	</div>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script type="text/javascript">
+	$("img").lazyload({
+		placeholder : "https://ae01.alicdn.com/kf/U5f7403b223a844d9b610f135aba24fb7l.png",
+		threshold :2000,
+		effect:"fadeIn"
+	});
+	</script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/touchjs/0.2.14/touch.min.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 	<script type="text/javascript" src="/Public/m/js/common.min.js?1.0.24"></script>

@@ -28,7 +28,7 @@
 						<a href="/app/195.html" class="btn fr" title="腾讯NOW直播" data-clipboard-text="腾讯NOW直播">看看</a>
 						<a href="/app/195.html" title="腾讯NOW直播" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/U152b1b3d07f44de5928a229839cbc232K.jpg" alt="腾讯NOW直播">
+								<img data-original="https://ae01.alicdn.com/kf/U152b1b3d07f44de5928a229839cbc232K.jpg" alt="腾讯NOW直播">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -41,7 +41,7 @@
 						<a href="/app/194.html" class="btn fr" title="糖豆视频" data-clipboard-text="糖豆视频">看看</a>
 						<a href="/app/194.html" title="糖豆视频" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/Ub61dda3b123f4d96889862de525da3f7o.jpg" alt="糖豆视频">
+								<img data-original="https://ae01.alicdn.com/kf/Ub61dda3b123f4d96889862de525da3f7o.jpg" alt="糖豆视频">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -54,7 +54,7 @@
 						<a href="/app/171.html" class="btn fr" title="一条视频" data-clipboard-text="一条视频">看看</a>
 						<a href="/app/171.html" title="一条视频" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/Ub3b15d70f2cd40499d978c111311c134Y.jpg" alt="一条视频">
+								<img data-original="https://ae01.alicdn.com/kf/Ub3b15d70f2cd40499d978c111311c134Y.jpg" alt="一条视频">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -67,7 +67,7 @@
 						<a href="/app/80.html" class="btn fr" title="微信直播" data-clipboard-text="微信直播">看看</a>
 						<a href="/app/80.html" title="微信直播" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/H89d52f3a7ad544d5b72ddf55a9dc636cP.png" alt="微信直播">
+								<img data-original="https://ae01.alicdn.com/kf/H89d52f3a7ad544d5b72ddf55a9dc636cP.png" alt="微信直播">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -80,7 +80,7 @@
 						<a href="/app/77.html" class="btn fr" title="网易声音图书馆" data-clipboard-text="网易声音图书馆">看看</a>
 						<a href="/app/77.html" title="网易声音图书馆" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/Hd0d05b77885e452e99f816e8a4cf22ddz.jpg" alt="网易声音图书馆">
+								<img data-original="https://ae01.alicdn.com/kf/Hd0d05b77885e452e99f816e8a4cf22ddz.jpg" alt="网易声音图书馆">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -93,7 +93,7 @@
 						<a href="/app/54.html" class="btn fr" title="小影" data-clipboard-text="小影">看看</a>
 						<a href="/app/54.html" title="小影" class="left">
 							<span class="obj-img fl">
-								<img src="https://ae01.alicdn.com/kf/H313ca13817764a43a1b61097374d679fb.png" alt="小影">
+								<img data-original="https://ae01.alicdn.com/kf/H313ca13817764a43a1b61097374d679fb.png" alt="小影">
 							</span>
 							<div class="mid">
 							<div class="author"><span>&nbsp;</span></div>
@@ -123,6 +123,14 @@
         </div>
     </div>	
 	</div>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script type="text/javascript">
+	$("img").lazyload({
+		placeholder : "https://ae01.alicdn.com/kf/U5f7403b223a844d9b610f135aba24fb7l.png",
+		threshold :2000,
+		effect:"fadeIn"
+	});
+	</script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/touchjs/0.2.14/touch.min.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 	<script type="text/javascript" src="/Public/m/js/common.min.js?1.0.24"></script>
