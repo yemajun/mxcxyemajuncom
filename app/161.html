@@ -15,6 +15,56 @@
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/page.css">
 	<script type="text/javascript" src="/Public/m/js/adaptive-version.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
+        url = location.href.split('#')[0];  
+        url = encodeURIComponent(url); 
+        $.ajax({
+            type: "get",
+            url: "https://share.yemajun.com/jssdk.php?url=" + url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function(data) {
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                         "onMenuShareTimeline",
+                        "onMenuShareAppMessage",
+                        "onMenuShareQQ", 
+                        "onMenuShareWeibo" 
+                    ]
+                });
+            },
+            error: function(data) {
+                console.log("Timeout");
+            }
+        });
+    wx.ready(function(){  
+        var options = {  
+            title: '贝贝小程序', // 分享标题  
+            link: 'https://m.xcx.yemajun.com/app/161.html', // 分享链接，记得使用绝对路径  
+            imgUrl: 'https://ae01.alicdn.com/kf/Hd79b1f1d34fd49bbb73254349c330c20I.jpeg', // 分享图标，记得使用绝对路径  
+            desc: '一起拼团，乐享优惠！', // 分享描述  
+            success: function () {  
+                console.info('分享成功！');  
+                // 用户确认分享后执行的回调函数  
+            },  
+            cancel: function () {  
+                console.info('取消分享！');  
+                // 用户取消分享后执行的回调函数  
+            }  
+        }  
+        wx.onMenuShareTimeline(options); // 分享到朋友圈  
+        wx.onMenuShareAppMessage(options); // 分享给朋友  
+        wx.onMenuShareQQ(options); // 分享到QQ  
+    });  
+}
+</script>  
 </head>
 <body>
 	<div class="page">
@@ -23,7 +73,7 @@
 				<div class="objects" style="margin-left: 0px;">
 					<div class="list list13 b-bottom-e5:after" style="text-align:center;padding: 40px 0 0 0;border-bottom: 1px solid #fff;">
 							<div class="obj-img fl" style="width: 100%;">
-								<img data-original="https://ae01.alicdn.com/kf/Hd79b1f1d34fd49bbb73254349c330c20I.jpeg" alt="贝贝">
+								<img data-original="https://ae01.alicdn.com/kf/Hd79b1f1d34fd49bbb73254349c330c20I.jpeg">
 							</div>
 						<div class="mid" style="width: 100%;margin-left: 0px;">
 						<p class="author"  style="font-size: .3rem;color: #333;">&nbsp;</p>
@@ -36,7 +86,7 @@
 				<div class="cut-wrap">
 					<div class="cut-imgs" >
 						<div class="line c-img"></div>
-						<span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U130f71d612284e0f8b37002b93c56dcap.png" alt="贝贝截图-0" bigimg="https://ae01.alicdn.com/kf/U130f71d612284e0f8b37002b93c56dcap.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U80ac038a7f05401ebdaf318307c709dde.png" alt="贝贝截图-1" bigimg="https://ae01.alicdn.com/kf/U80ac038a7f05401ebdaf318307c709dde.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Ue9fa8601506f480bb3c18dbe25827bf29.png" alt="贝贝截图-2" bigimg="https://ae01.alicdn.com/kf/Ue9fa8601506f480bb3c18dbe25827bf29.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Uf67af251896242e681d5fc6efa798654d.png" alt="贝贝截图-3" bigimg="https://ae01.alicdn.com/kf/Uf67af251896242e681d5fc6efa798654d.png"/></span>						<span class="c-img"><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script><a href="#" target="_blank"><img src="#" alt="手机端快照最后一张" width="640" height="60" /></a><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script></span>
+						<span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U130f71d612284e0f8b37002b93c56dcap.png" bigimg="https://ae01.alicdn.com/kf/U130f71d612284e0f8b37002b93c56dcap.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U80ac038a7f05401ebdaf318307c709dde.png" bigimg="https://ae01.alicdn.com/kf/U80ac038a7f05401ebdaf318307c709dde.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Ue9fa8601506f480bb3c18dbe25827bf29.png" bigimg="https://ae01.alicdn.com/kf/Ue9fa8601506f480bb3c18dbe25827bf29.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Uf67af251896242e681d5fc6efa798654d.png" bigimg="https://ae01.alicdn.com/kf/Uf67af251896242e681d5fc6efa798654d.png"/></span>						<span class="c-img"><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script><a href="#" target="_blank"><img src="#" alt="手机端快照最后一张" width="640" height="60" /></a><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script></span>
 						<div class="line c-img"></div>
 					</div>
 				</div>
@@ -51,7 +101,7 @@
 	</div>
 	</div>	
 	<div class="m-bottom">
-    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 6px rgba(0,0,0,.06);">
+    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 16px rgba(0,0,0,.06);">
             <a style="padding: .05rem 0;height: .85rem;" onClick="javascript:if (window.history.length > 2) history.back(); else window.location.href='/';" class="rback ">
                 <span></span>
                 <p>返回</p>
@@ -148,56 +198,5 @@
 		$('.copy-laye-content .ewm img').attr('src', icon);
 	}
 	</script>
-    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js">
-    </script>
-    <script>
-		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
-        url = location.href.split('#')[0];  
-        url = encodeURIComponent(url); 
-        $.ajax({
-            type: "get",
-            url: "https://share.yemajun.com/jssdk.php?url=" + url,
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback: "success_jsonpCallback",
-            success: function(data) {
-                wx.config({
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonceStr,
-                    signature: data.signature,
-                    jsApiList: [
-                         "onMenuShareTimeline",
-                        "onMenuShareAppMessage",
-                        "onMenuShareQQ", 
-                        "onMenuShareWeibo" 
-                    ]
-                });
-            },
-            error: function(data) {
-                console.log("Timeout");
-            }
-        });
-    wx.ready(function(){  
-        var options = {  
-            title: '贝贝小程序', // 分享标题  
-            link: 'https://m.xcx.yemajun.com/app/161.html', // 分享链接，记得使用绝对路径  
-            imgUrl: 'https://ae01.alicdn.com/kf/Hd79b1f1d34fd49bbb73254349c330c20I.jpeg', // 分享图标，记得使用绝对路径  
-            desc: '一起拼团，乐享优惠！', // 分享描述  
-            success: function () {  
-                console.info('分享成功！');  
-                // 用户确认分享后执行的回调函数  
-            },  
-            cancel: function () {  
-                console.info('取消分享！');  
-                // 用户取消分享后执行的回调函数  
-            }  
-        }  
-        wx.onMenuShareTimeline(options); // 分享到朋友圈  
-        wx.onMenuShareAppMessage(options); // 分享给朋友  
-        wx.onMenuShareQQ(options); // 分享到QQ  
-    });  
-}
-</script>  
 </body>
 </html>

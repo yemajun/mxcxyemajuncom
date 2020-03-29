@@ -15,6 +15,56 @@
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/page.css">
 	<script type="text/javascript" src="/Public/m/js/adaptive-version.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
+        url = location.href.split('#')[0];  
+        url = encodeURIComponent(url); 
+        $.ajax({
+            type: "get",
+            url: "https://share.yemajun.com/jssdk.php?url=" + url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function(data) {
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                         "onMenuShareTimeline",
+                        "onMenuShareAppMessage",
+                        "onMenuShareQQ", 
+                        "onMenuShareWeibo" 
+                    ]
+                });
+            },
+            error: function(data) {
+                console.log("Timeout");
+            }
+        });
+    wx.ready(function(){  
+        var options = {  
+            title: '热门微博小程序', // 分享标题  
+            link: 'https://m.xcx.yemajun.com/app/10.html', // 分享链接，记得使用绝对路径  
+            imgUrl: 'https://ae01.alicdn.com/kf/H3c14bf51798a45aba3f85e8196b535d0x.png', // 分享图标，记得使用绝对路径  
+            desc: '新浪微博出品的轻版微博应用，一手明星动态，时下热点事件，搞笑幽默段子等热门微博等你来看。', // 分享描述  
+            success: function () {  
+                console.info('分享成功！');  
+                // 用户确认分享后执行的回调函数  
+            },  
+            cancel: function () {  
+                console.info('取消分享！');  
+                // 用户取消分享后执行的回调函数  
+            }  
+        }  
+        wx.onMenuShareTimeline(options); // 分享到朋友圈  
+        wx.onMenuShareAppMessage(options); // 分享给朋友  
+        wx.onMenuShareQQ(options); // 分享到QQ  
+    });  
+}
+</script>  
 </head>
 <body>
 	<div class="page">
@@ -23,7 +73,7 @@
 				<div class="objects" style="margin-left: 0px;">
 					<div class="list list13 b-bottom-e5:after" style="text-align:center;padding: 40px 0 0 0;border-bottom: 1px solid #fff;">
 							<div class="obj-img fl" style="width: 100%;">
-								<img data-original="https://ae01.alicdn.com/kf/H3c14bf51798a45aba3f85e8196b535d0x.png" alt="热门微博">
+								<img data-original="https://ae01.alicdn.com/kf/H3c14bf51798a45aba3f85e8196b535d0x.png">
 							</div>
 						<div class="mid" style="width: 100%;margin-left: 0px;">
 						<p class="author"  style="font-size: .3rem;color: #333;">&nbsp;</p>
@@ -36,7 +86,7 @@
 				<div class="cut-wrap">
 					<div class="cut-imgs" >
 						<div class="line c-img"></div>
-						<span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H5e728c21411b4a9ebffeaff7022d7f4fA.png" alt="热门微博截图-0" bigimg="https://ae01.alicdn.com/kf/H5e728c21411b4a9ebffeaff7022d7f4fA.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Hff3b62e036f243f1bc190a22ea1bce15c.png" alt="热门微博截图-1" bigimg="https://ae01.alicdn.com/kf/Hff3b62e036f243f1bc190a22ea1bce15c.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H7450c8eff54a4a108cba63c2f8ddd60ev.png" alt="热门微博截图-2" bigimg="https://ae01.alicdn.com/kf/H7450c8eff54a4a108cba63c2f8ddd60ev.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H98e2f57b88694c96b639554e4bb52b87y.png" alt="热门微博截图-3" bigimg="https://ae01.alicdn.com/kf/H98e2f57b88694c96b639554e4bb52b87y.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H2e3b189b0ebf4d6389f126603f951965E.png" alt="热门微博截图-4" bigimg="https://ae01.alicdn.com/kf/H2e3b189b0ebf4d6389f126603f951965E.png"/></span>						<span class="c-img"><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script><a href="#" target="_blank"><img src="#" alt="手机端快照最后一张" width="640" height="60" /></a><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script></span>
+						<span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H5e728c21411b4a9ebffeaff7022d7f4fA.png" bigimg="https://ae01.alicdn.com/kf/H5e728c21411b4a9ebffeaff7022d7f4fA.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Hff3b62e036f243f1bc190a22ea1bce15c.png" bigimg="https://ae01.alicdn.com/kf/Hff3b62e036f243f1bc190a22ea1bce15c.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H7450c8eff54a4a108cba63c2f8ddd60ev.png" bigimg="https://ae01.alicdn.com/kf/H7450c8eff54a4a108cba63c2f8ddd60ev.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H98e2f57b88694c96b639554e4bb52b87y.png" bigimg="https://ae01.alicdn.com/kf/H98e2f57b88694c96b639554e4bb52b87y.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/H2e3b189b0ebf4d6389f126603f951965E.png" bigimg="https://ae01.alicdn.com/kf/H2e3b189b0ebf4d6389f126603f951965E.png"/></span>						<span class="c-img"><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script><a href="#" target="_blank"><img src="#" alt="手机端快照最后一张" width="640" height="60" /></a><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script></span>
 						<div class="line c-img"></div>
 					</div>
 				</div>
@@ -51,7 +101,7 @@
 	</div>
 	</div>	
 	<div class="m-bottom">
-    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 6px rgba(0,0,0,.06);">
+    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 16px rgba(0,0,0,.06);">
             <a style="padding: .05rem 0;height: .85rem;" onClick="javascript:if (window.history.length > 2) history.back(); else window.location.href='/';" class="rback ">
                 <span></span>
                 <p>返回</p>
@@ -148,56 +198,5 @@
 		$('.copy-laye-content .ewm img').attr('src', icon);
 	}
 	</script>
-    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js">
-    </script>
-    <script>
-		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
-        url = location.href.split('#')[0];  
-        url = encodeURIComponent(url); 
-        $.ajax({
-            type: "get",
-            url: "https://share.yemajun.com/jssdk.php?url=" + url,
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback: "success_jsonpCallback",
-            success: function(data) {
-                wx.config({
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonceStr,
-                    signature: data.signature,
-                    jsApiList: [
-                         "onMenuShareTimeline",
-                        "onMenuShareAppMessage",
-                        "onMenuShareQQ", 
-                        "onMenuShareWeibo" 
-                    ]
-                });
-            },
-            error: function(data) {
-                console.log("Timeout");
-            }
-        });
-    wx.ready(function(){  
-        var options = {  
-            title: '热门微博小程序', // 分享标题  
-            link: 'https://m.xcx.yemajun.com/app/10.html', // 分享链接，记得使用绝对路径  
-            imgUrl: 'https://ae01.alicdn.com/kf/H3c14bf51798a45aba3f85e8196b535d0x.png', // 分享图标，记得使用绝对路径  
-            desc: '新浪微博出品的轻版微博应用，一手明星动态，时下热点事件，搞笑幽默段子等热门微博等你来看。', // 分享描述  
-            success: function () {  
-                console.info('分享成功！');  
-                // 用户确认分享后执行的回调函数  
-            },  
-            cancel: function () {  
-                console.info('取消分享！');  
-                // 用户取消分享后执行的回调函数  
-            }  
-        }  
-        wx.onMenuShareTimeline(options); // 分享到朋友圈  
-        wx.onMenuShareAppMessage(options); // 分享给朋友  
-        wx.onMenuShareQQ(options); // 分享到QQ  
-    });  
-}
-</script>  
 </body>
 </html>

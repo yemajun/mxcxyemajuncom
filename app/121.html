@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<link rel="shortcut icon" href="/Public/m/images/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon-precomposed" href="https://ae01.alicdn.com/kf/H86eca28cb4934e18918a1772ed8b00abh.jpg"/>
-    <title>SIZE小程序</title>
+	<link rel="apple-touch-icon-precomposed" href="https://ae01.alicdn.com/kf/Ua71909ecae144cef933527c4e442a3d1b.png"/>
+    <title>兼职猫小程序</title>
     <meta name="keywords" content="" />
-	<meta name="description" content="定义运动潮流文化的标尺。" />
+	<meta name="description" content="兼职猫是全国领先的兼职求职平台，每天更新20万招聘岗位，已为千万大学生找到兼职工作。" />
 	<meta name="referrer" content="no-referrer" />
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/reset.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/layout.css?1.0.47">
@@ -15,6 +15,56 @@
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/page.css">
 	<script type="text/javascript" src="/Public/m/js/adaptive-version.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
+        url = location.href.split('#')[0];  
+        url = encodeURIComponent(url); 
+        $.ajax({
+            type: "get",
+            url: "https://share.yemajun.com/jssdk.php?url=" + url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function(data) {
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                         "onMenuShareTimeline",
+                        "onMenuShareAppMessage",
+                        "onMenuShareQQ", 
+                        "onMenuShareWeibo" 
+                    ]
+                });
+            },
+            error: function(data) {
+                console.log("Timeout");
+            }
+        });
+    wx.ready(function(){  
+        var options = {  
+            title: '兼职猫小程序', // 分享标题  
+            link: 'https://m.xcx.yemajun.com/app/121.html', // 分享链接，记得使用绝对路径  
+            imgUrl: 'https://ae01.alicdn.com/kf/Ua71909ecae144cef933527c4e442a3d1b.png', // 分享图标，记得使用绝对路径  
+            desc: '兼职猫是全国领先的兼职求职平台，每天更新20万招聘岗位，已为千万大学生找到兼职工作。', // 分享描述  
+            success: function () {  
+                console.info('分享成功！');  
+                // 用户确认分享后执行的回调函数  
+            },  
+            cancel: function () {  
+                console.info('取消分享！');  
+                // 用户取消分享后执行的回调函数  
+            }  
+        }  
+        wx.onMenuShareTimeline(options); // 分享到朋友圈  
+        wx.onMenuShareAppMessage(options); // 分享给朋友  
+        wx.onMenuShareQQ(options); // 分享到QQ  
+    });  
+}
+</script>  
 </head>
 <body>
 	<div class="page">
@@ -23,20 +73,20 @@
 				<div class="objects" style="margin-left: 0px;">
 					<div class="list list13 b-bottom-e5:after" style="text-align:center;padding: 40px 0 0 0;border-bottom: 1px solid #fff;">
 							<div class="obj-img fl" style="width: 100%;">
-								<img data-original="https://ae01.alicdn.com/kf/H86eca28cb4934e18918a1772ed8b00abh.jpg" alt="SIZE">
+								<img data-original="https://ae01.alicdn.com/kf/Ua71909ecae144cef933527c4e442a3d1b.png">
 							</div>
 						<div class="mid" style="width: 100%;margin-left: 0px;">
 						<p class="author"  style="font-size: .3rem;color: #333;">&nbsp;</p>
-							<p class="author"  style="font-size: .4rem;color: #333;">SIZE</p>
+							<p class="author"  style="font-size: .4rem;color: #333;">兼职猫</p>
 							<p class="author"  style="font-size: .2rem;color: #333;">&nbsp;</p>
-							<p class="author"><a style="display: inline-block;font-size: .28rem;color: #7d8994;background-color: #f1f1f1;padding: 0 .28rem;line-height: 2;border-radius: .28rem;" href="/app/lists/dir/tiyu/p/1.html">体育</a> <a style="display: inline-block;font-size: .28rem;color: #7d8994;background-color: #f1f1f1;padding: 0 .28rem;   line-height: 2;    border-radius: .28rem;" href="/app/lists/dir/tiyu/p/1.html">运动</a> </p>
+							<p class="author"><a style="display: inline-block;font-size: .28rem;color: #7d8994;background-color: #f1f1f1;padding: 0 .28rem;line-height: 2;border-radius: .28rem;" href="/app/lists/dir/shenghuo/p/1.html">生活</a> <a style="display: inline-block;font-size: .28rem;color: #7d8994;background-color: #f1f1f1;padding: 0 .28rem;   line-height: 2;    border-radius: .28rem;" href="/app/lists/dir/shenghuo/p/1.html">过日子</a> </p>
 						</div>
 					</div>
 				</div>
 				<div class="cut-wrap">
 					<div class="cut-imgs" >
 						<div class="line c-img"></div>
-						<span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U8ffb160ffeb64a35bf99b04a23d5e6b6M.png" alt="SIZE截图-0" bigimg="https://ae01.alicdn.com/kf/U8ffb160ffeb64a35bf99b04a23d5e6b6M.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Uf58d3fd6b40c421998f92a4144211829v.png" alt="SIZE截图-1" bigimg="https://ae01.alicdn.com/kf/Uf58d3fd6b40c421998f92a4144211829v.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Uf6a4a564b6fe4a8cb7c4764d76bda715D.png" alt="SIZE截图-2" bigimg="https://ae01.alicdn.com/kf/Uf6a4a564b6fe4a8cb7c4764d76bda715D.png"/></span>						<span class="c-img"><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script><a href="#" target="_blank"><img src="#" alt="手机端快照最后一张" width="640" height="60" /></a><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script></span>
+						<span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U2169fb0fe0e645509233a06d781ecc7fr.png" bigimg="https://ae01.alicdn.com/kf/U2169fb0fe0e645509233a06d781ecc7fr.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Ua4ed4a687614450dba363ec65c5b99e6A.png" bigimg="https://ae01.alicdn.com/kf/Ua4ed4a687614450dba363ec65c5b99e6A.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/Ua6671bddb906494eb00ee25fd51a3518J.png" bigimg="https://ae01.alicdn.com/kf/Ua6671bddb906494eb00ee25fd51a3518J.png"/></span><span class="c-img"><img data-original="https://ae01.alicdn.com/kf/U740a4390073945a9a616fec8ae8675e6c.png" bigimg="https://ae01.alicdn.com/kf/U740a4390073945a9a616fec8ae8675e6c.png"/></span>						<span class="c-img"><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script><a href="#" target="_blank"><img src="#" alt="手机端快照最后一张" width="640" height="60" /></a><script class="status5">var status5="0";if(status5==0){$(".status5").parent().hide()}</script></span>
 						<div class="line c-img"></div>
 					</div>
 				</div>
@@ -46,17 +96,17 @@
 					<div class="color fl"></div>小程序简介
 				</div>
 				<div class="tag-content wx-info-content height"  style="    font-size: .26rem;    line-height: .45rem;    color: #a4a4a4;margin: .3rem .3rem 1.4rem .3rem;">
-					定义运动潮流文化的标尺。	<div style="height: 2.2rem;margin: .3rem 0 0 0;display:none;">
+					兼职猫是全国领先的兼职求职平台，每天更新20万招聘岗位，已为千万大学生找到兼职工作。	<div style="height: 2.2rem;margin: .3rem 0 0 0;display:none;">
 		<img style="width: 6.9rem;height: 2.2rem;border-radius: 5px;" src="https://ae01.alicdn.com/kf/HTB1r.tKXjvuK1Rjy0Fa7602aVXam.png">
 	</div>
 	</div>	
 	<div class="m-bottom">
-    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 6px rgba(0,0,0,.06);">
+    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 16px rgba(0,0,0,.06);">
             <a style="padding: .05rem 0;height: .85rem;" onClick="javascript:if (window.history.length > 2) history.back(); else window.location.href='/';" class="rback ">
                 <span></span>
                 <p>返回</p>
             </a>
-			<a style="width: 2.2rem;height: .8rem;line-height: .8rem;font-size: .28rem;color: #fff;background: #605ab0;border-radius: .1rem;-webkit-flex: 3;-moz-box-flex: 3;-ms-flex: 3; flex: 3;margin: 0 10px 0 0;padding: 0 0;" href="javascript:;" class="btn fr copyBtn" data-clipboard-text="SIZE" onclick="showtip('SIZE','https://ae01.alicdn.com/kf/H86eca28cb4934e18918a1772ed8b00abh.jpg','')">打开</a>
+			<a style="width: 2.2rem;height: .8rem;line-height: .8rem;font-size: .28rem;color: #fff;background: #605ab0;border-radius: .1rem;-webkit-flex: 3;-moz-box-flex: 3;-ms-flex: 3; flex: 3;margin: 0 10px 0 0;padding: 0 0;" href="javascript:;" class="btn fr copyBtn" data-clipboard-text="兼职猫" onclick="showtip('兼职猫','https://ae01.alicdn.com/kf/Ua71909ecae144cef933527c4e442a3d1b.png','')">打开</a>
         </div>
     </div>
 	</div>
@@ -68,7 +118,7 @@
 			</span>
 			<p class="name" style="display:none"></p>
 			<div class="tip-img">
-				<img style="width: 2.1rem;min-height: 2.1rem;" src="https://ae01.alicdn.com/kf/H912c15644e5046d394fe99211f2f9eb34.png" alt="">
+				<img style="width: 2.1rem;min-height: 2.1rem;" src="https://ae01.alicdn.com/kf/U679b755c41ca43b5a9174caac02b8d09I.jpg" alt="">
 			</div>
 			<p class="copy-tip" style="margin-bottom: .3rem;color: #888;">长按小程序码识别</p>
 			<a href="weixin://" class="toweixin">打开微信</a>
@@ -80,7 +130,7 @@
 			</span>
 			<p class="name" style="display:none"></p>
 			<div class="tip-img">
-				<img style="width: 2.1rem;min-height: 2.1rem;" src="https://ae01.alicdn.com/kf/H912c15644e5046d394fe99211f2f9eb34.png" alt="">
+				<img style="width: 2.1rem;min-height: 2.1rem;" src="https://ae01.alicdn.com/kf/U679b755c41ca43b5a9174caac02b8d09I.jpg" alt="">
 			</div>
 			<p class="copy-tip" style="margin-bottom: .3rem;color: #888;">长按小程序码识别</p>
 			<a href="weixin://" class="toweixin">打开微信</a>
@@ -148,56 +198,5 @@
 		$('.copy-laye-content .ewm img').attr('src', icon);
 	}
 	</script>
-    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js">
-    </script>
-    <script>
-		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
-        url = location.href.split('#')[0];  
-        url = encodeURIComponent(url); 
-        $.ajax({
-            type: "get",
-            url: "https://share.yemajun.com/jssdk.php?url=" + url,
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback: "success_jsonpCallback",
-            success: function(data) {
-                wx.config({
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonceStr,
-                    signature: data.signature,
-                    jsApiList: [
-                         "onMenuShareTimeline",
-                        "onMenuShareAppMessage",
-                        "onMenuShareQQ", 
-                        "onMenuShareWeibo" 
-                    ]
-                });
-            },
-            error: function(data) {
-                console.log("Timeout");
-            }
-        });
-    wx.ready(function(){  
-        var options = {  
-            title: 'SIZE小程序', // 分享标题  
-            link: 'https://m.xcx.yemajun.com/app/240.html', // 分享链接，记得使用绝对路径  
-            imgUrl: 'https://ae01.alicdn.com/kf/H86eca28cb4934e18918a1772ed8b00abh.jpg', // 分享图标，记得使用绝对路径  
-            desc: '定义运动潮流文化的标尺。', // 分享描述  
-            success: function () {  
-                console.info('分享成功！');  
-                // 用户确认分享后执行的回调函数  
-            },  
-            cancel: function () {  
-                console.info('取消分享！');  
-                // 用户取消分享后执行的回调函数  
-            }  
-        }  
-        wx.onMenuShareTimeline(options); // 分享到朋友圈  
-        wx.onMenuShareAppMessage(options); // 分享给朋友  
-        wx.onMenuShareQQ(options); // 分享到QQ  
-    });  
-}
-</script>  
 </body>
 </html>

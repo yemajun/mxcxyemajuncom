@@ -15,6 +15,56 @@
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/page.css">
 	<script type="text/javascript" src="/Public/m/js/adaptive-version.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
+        url = location.href.split('#')[0];  
+        url = encodeURIComponent(url); 
+        $.ajax({
+            type: "get",
+            url: "https://share.yemajun.com/jssdk.php?url=" + url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "success_jsonpCallback",
+            success: function(data) {
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                         "onMenuShareTimeline",
+                        "onMenuShareAppMessage",
+                        "onMenuShareQQ", 
+                        "onMenuShareWeibo" 
+                    ]
+                });
+            },
+            error: function(data) {
+                console.log("Timeout");
+            }
+        });
+    wx.ready(function(){  
+        var options = {  
+            title: '政务必备小程序', // 分享标题  
+            link: 'https://m.xcx.yemajun.com/special/48.html', // 分享链接，记得使用绝对路径  
+            imgUrl: 'https://ae01.alicdn.com/kf/Ud10c338b3e2c4a30ae210342897f7be0H.jpg', // 分享图标，记得使用绝对路径  
+            desc: '野马程序推荐的政务必备小程序，你不收藏下吗？', // 分享描述  
+            success: function () {  
+                console.info('分享成功！');  
+                // 用户确认分享后执行的回调函数  
+            },  
+            cancel: function () {  
+                console.info('取消分享！');  
+                // 用户取消分享后执行的回调函数  
+            }  
+        }  
+        wx.onMenuShareTimeline(options); // 分享到朋友圈  
+        wx.onMenuShareAppMessage(options); // 分享给朋友  
+        wx.onMenuShareQQ(options); // 分享到QQ  
+    });  
+}
+</script>  
 </head>
 <body>
 	<div class="page">
@@ -182,56 +232,5 @@
 			$('.copy-laye-content .ewm img').attr('src', icon);
 		}
 		</script>
-    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js">
-    </script>
-    <script>
-		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
-        url = location.href.split('#')[0];  
-        url = encodeURIComponent(url); 
-        $.ajax({
-            type: "get",
-            url: "https://share.yemajun.com/jssdk.php?url=" + url,
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback: "success_jsonpCallback",
-            success: function(data) {
-                wx.config({
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonceStr,
-                    signature: data.signature,
-                    jsApiList: [
-                         "onMenuShareTimeline",
-                        "onMenuShareAppMessage",
-                        "onMenuShareQQ", 
-                        "onMenuShareWeibo" 
-                    ]
-                });
-            },
-            error: function(data) {
-                console.log("Timeout");
-            }
-        });
-    wx.ready(function(){  
-        var options = {  
-            title: '政务必备小程序', // 分享标题  
-            link: 'https://m.xcx.yemajun.com/special/48.html', // 分享链接，记得使用绝对路径  
-            imgUrl: 'https://ae01.alicdn.com/kf/Ud10c338b3e2c4a30ae210342897f7be0H.jpg', // 分享图标，记得使用绝对路径  
-            desc: '政务必备小程序', // 分享描述  
-            success: function () {  
-                console.info('分享成功！');  
-                // 用户确认分享后执行的回调函数  
-            },  
-            cancel: function () {  
-                console.info('取消分享！');  
-                // 用户取消分享后执行的回调函数  
-            }  
-        }  
-        wx.onMenuShareTimeline(options); // 分享到朋友圈  
-        wx.onMenuShareAppMessage(options); // 分享给朋友  
-        wx.onMenuShareQQ(options); // 分享到QQ  
-    });  
-}
-</script>  
 </body>
 </html>
