@@ -2,7 +2,7 @@
 
 .page_group {
 	font-size: 14px;
-	padding: 0.5rem 0rem 1.62rem 0rem;
+	padding: 25px 0;
 	text-align: center;
 }
 .page_group li{
