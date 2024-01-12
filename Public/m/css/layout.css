@@ -1,7 +1,7 @@
 .b-top-e5 { position: relative; }
-.b-top-e5:after { content: ''; position: absolute; left: 0; top: 0; width: 200%; height: 200%; border-top: 1px solid #f1f1f1; -webkit-transform-origin: 0 0; -moz-transform-origin: 0 0; -o-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scale(0.5, 0.5); -o-transform: scale(0.5, 0.5); -moz-transform: scale(0.5, 0.5); transform: scale(0.5, 0.5); -moz-box-sizing: border-box; box-sizing: border-box; pointer-events: none }
+.b-top-e5:after { content: ''; position: absolute; left: 0; top: 0; width: 200%; height: 200%; border-top: 0px solid #f1f1f1; -webkit-transform-origin: 0 0; -moz-transform-origin: 0 0; -o-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scale(0.5, 0.5); -o-transform: scale(0.5, 0.5); -moz-transform: scale(0.5, 0.5); transform: scale(0.5, 0.5); -moz-box-sizing: border-box; box-sizing: border-box; pointer-events: none }
 .b-bottom-e5 { position: relative; }
-.b-bottom-e5:after { content: ''; position: absolute; left: 0; top: 0; width: 200%; height: 200%; border-bottom: 1px solid #f1f1f1; -webkit-transform-origin: 0 0; -moz-transform-origin: 0 0; -o-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scale(0.5, 0.5); -o-transform: scale(0.5, 0.5); -moz-transform: scale(0.5, 0.5); transform: scale(0.5, 0.5); -moz-box-sizing: border-box; box-sizing: border-box; pointer-events: none }
+.b-bottom-e5:after { content: ''; position: absolute; left: 0; top: 0; width: 200%; height: 200%; border-bottom: 0px solid #f1f1f1; -webkit-transform-origin: 0 0; -moz-transform-origin: 0 0; -o-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scale(0.5, 0.5); -o-transform: scale(0.5, 0.5); -moz-transform: scale(0.5, 0.5); transform: scale(0.5, 0.5); -moz-box-sizing: border-box; box-sizing: border-box; pointer-events: none }
 .b-left-e5 { position: relative; }
 .b-left-e5:after { content: ''; position: absolute; left: 0; top: 0; width: 200%; height: 200%; border-left: 1px solid #f1f1f1; -webkit-transform-origin: 0 0; -moz-transform-origin: 0 0; -o-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scale(0.5, 0.5); -o-transform: scale(0.5, 0.5); -moz-transform: scale(0.5, 0.5); transform: scale(0.5, 0.5); -moz-box-sizing: border-box; box-sizing: border-box; pointer-events: none }
 .b-right-e5 { position: relative; }
@@ -60,16 +60,16 @@ html, body { overflow: auto; -webkit-overflow-scrolling: touch; -moz-overflow-sc
 }
 
 /* 底部导航 */
-.m-bottom .bottom-menu { width: 100%; height: 100%; background: #fff; padding-top: .12rem; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex;border-top: 1px solid #fff; /*box-shadow: 0 -1px 5px rgba(0,0,0,.12);*/ }
+.m-bottom .bottom-menu { width: 100%; height: 100%; background: #fff; padding-top: .12rem; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex;border-top: 1px solid #fff; box-shadow: 0 -1px 30px rgba(0,0,0,.03); }
 .m-bottom .bottom-menu a { -webkit-flex: 1; -moz-box-flex: 1; -ms-flex: 1; flex: 1; height: .9rem; padding: .05rem 0; -moz-box-sizing: border-box; box-sizing: border-box; text-align: center; -webkit-flex-direction: row; -moz-box-orient: horizontal; -moz-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -moz-box-align: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -moz-box-pack: center; -ms-flex-pack: center; justify-content: center; position: relative; }
 
 .m-bottom .bottom-menu a span { width: .44rem; height: .44rem; display: inline-block; }
 .m-bottom .bottom-menu a p { width: 100%; position: absolute; bottom: .06rem; left: 0; font-size: .2rem; color: #808080; }
-.m-bottom .bottom-menu a.rback span { background: url('https://ae01.alicdn.com/kf/H4454302942a2435d92f2905c74c0ea2fP.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
+.m-bottom .bottom-menu a.rback span { background: url('../images/rback.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
 .m-bottom .bottom-menu a.zhuye span { background: url('https://ae01.alicdn.com/kf/U13f53efdeab24fe6b539f17392b0a35d1.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
 .m-bottom .bottom-menu a.zhuye.active span { background: url('https://ae01.alicdn.com/kf/U13f53efdeab24fe6b539f17392b0a35d1.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
 .m-bottom .bottom-menu a.fenlei span { background: url('https://ae01.alicdn.com/kf/HTB1v6XNXffsK1RjSszb763qBXXa2.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
-.m-bottom .bottom-menu a.fenlei.active span { background: url('https://ae01.alicdn.com/kf/HTB1zZ0NXirxK1RkHFCc763QCVXaP.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
+.m-bottom .bottom-menu a.fenlei.active span { background: url('../images/fenleia.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
 .m-bottom .bottom-menu a.bangdan span { background: url('../images/bangdan.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
 .m-bottom .bottom-menu a.bangdan.active span { background: url('../images/bangdana.png') no-repeat center center; -o-background-size: contain; background-size: contain; }
 .m-bottom .bottom-menu a.apply span { background: url('../images/apply@2x.png') no-repeat center center; -o-background-size: contain; background-size: contain; }

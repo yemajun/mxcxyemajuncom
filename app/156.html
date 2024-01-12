@@ -11,60 +11,11 @@
 	<meta name="referrer" content="no-referrer" />
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/reset.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/layout.css?1.0.47">
-	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/Swiper/3.4.1/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/m/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/m/css/page.css">
 	<script type="text/javascript" src="/Public/m/js/adaptive-version.js"></script>
-	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script>
-		if (navigator.userAgent.match(/MicroMessenger/i) == 'MicroMessenger') {
-        url = location.href.split('#')[0];  
-        url = encodeURIComponent(url); 
-        $.ajax({
-            type: "get",
-            url: "https://share.yemajun.com/jssdk.php?url=" + url,
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback: "success_jsonpCallback",
-            success: function(data) {
-                wx.config({
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonceStr,
-                    signature: data.signature,
-                    jsApiList: [
-                         "onMenuShareTimeline",
-                        "onMenuShareAppMessage",
-                        "onMenuShareQQ", 
-                        "onMenuShareWeibo" 
-                    ]
-                });
-            },
-            error: function(data) {
-                console.log("Timeout");
-            }
-        });
-    wx.ready(function(){  
-        var options = {  
-            title: '美团外卖小程序', // 分享标题  
-            link: 'https://m.xcx.yemajun.com/app/156.html', // 分享链接，记得使用绝对路径  
-            imgUrl: 'https://ae01.alicdn.com/kf/U660b27c9440747ff8792ca1609e8c0f3b.png', // 分享图标，记得使用绝对路径  
-            desc: '美团外卖，目前国内最大的外卖网上订餐平台。美团外卖提供北京，上海，杭州，广州，天津等全国300城市网上订餐，附近的外卖送餐，药品，网上超市百货，水果外卖，上美团外卖官网。', // 分享描述  
-            success: function () {  
-                console.info('分享成功！');  
-                // 用户确认分享后执行的回调函数  
-            },  
-            cancel: function () {  
-                console.info('取消分享！');  
-                // 用户取消分享后执行的回调函数  
-            }  
-        }  
-        wx.onMenuShareTimeline(options); // 分享到朋友圈  
-        wx.onMenuShareAppMessage(options); // 分享给朋友  
-        wx.onMenuShareQQ(options); // 分享到QQ  
-    });  
-}
-</script>  
+	<script type="text/javascript" src="/Public/m/js/jquery.min.js"></script>
+ 
 </head>
 <body>
 	<div class="page">
@@ -101,12 +52,12 @@
 	</div>
 	</div>	
 	<div class="m-bottom">
-    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 16px rgba(0,0,0,.06);">
+    	        <div class="bottom-menu" style="padding-top: 0.18rem;box-shadow: 0 -1px 30px rgba(0,0,0,.06);">
             <a style="padding: .05rem 0;height: .85rem;" onClick="javascript:if (window.history.length > 2) history.back(); else window.location.href='/';" class="rback ">
                 <span></span>
                 <p>返回</p>
             </a>
-			<a style="width: 2.2rem;height: .8rem;line-height: .8rem;font-size: .28rem;color: #fff;background: #605ab0;border-radius: .1rem;-webkit-flex: 3;-moz-box-flex: 3;-ms-flex: 3; flex: 3;margin: 0 10px 0 0;padding: 0 0;" href="javascript:;" class="btn fr copyBtn" data-clipboard-text="美团外卖" onclick="showtip('美团外卖','https://ae01.alicdn.com/kf/U660b27c9440747ff8792ca1609e8c0f3b.png','')">打开</a>
+			<a style="width: 2.2rem;height: .8rem;line-height: .8rem;font-size: .28rem;color: #fff;background: #605ab0;border-radius: .8rem;-webkit-flex: 3;-moz-box-flex: 3;-ms-flex: 3; flex: 3;margin: 0 10px 0 0;padding: 0 0;" href="javascript:;" class="btn fr copyBtn" data-clipboard-text="美团外卖" onclick="showtip('美团外卖','https://ae01.alicdn.com/kf/U660b27c9440747ff8792ca1609e8c0f3b.png','')">打开</a>
         </div>
     </div>
 	</div>
@@ -137,20 +88,20 @@
 			<a href="#" class="fweixin">关闭</a>
 		</div>
 	</div>
-	<script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script type="text/javascript" src="/Public/m/js/jquery.lazyload.min.js"></script>
 	<script type="text/javascript">
 	$("img").lazyload({
 		placeholder : "https://ae01.alicdn.com/kf/U5f7403b223a844d9b610f135aba24fb7l.png",
 		threshold :2000,
-		effect:"fadeIn"
+		effect:"show"
 	});
 	</script>
-	<script type="text/javascript" src="https://cdn.bootcss.com/touchjs/0.2.14/touch.min.js"></script>
-	<script type="text/javascript" src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+	<script type="text/javascript" src="/Public/m/js/touch.min.js"></script>
+	<script type="text/javascript" src="/Public/m/js/clipboard.min.js"></script>
 	<script type="text/javascript" src="/Public/m/js/common.min.js?1.0.24"></script>
-	<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.1/js/swiper.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/layer/3.0.1/skin/default/layer.css">
-<script type="text/javascript" src="https://cdn.bootcss.com/layer/3.0.1/layer.js"></script>
+	<script type="text/javascript" src="/Public/m/js/swiper.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/m/css/layer.css">
+<script type="text/javascript" src="/Public/m/js/layer.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		if(window.navigator.userAgent.match(/MicroMessenger/i) ? true : false){
